@@ -10,7 +10,7 @@ pub struct Team {
     pub skill_tokens: u32,
 }
 
-pub fn get_tasks(path: String) -> Result<Vec<Team>, io::Error> {
+pub fn get_teams(path: String) -> Result<Vec<Team>, io::Error> {
     let mut reader = csv::Reader::from_path(path).unwrap(); /* csv::Reader::from_path(path).unwrap(); */
     let mut iter: csv::StringRecordsIter<std::fs::File> = reader.records();
     Ok(get_records(iter).unwrap())
